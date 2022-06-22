@@ -1,0 +1,14 @@
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\bin\Debug\Gastos.exe.config
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\bin\Debug\Gastos.exe
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\bin\Debug\Gastos.pdb
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\bin\Debug\GestorBD.dll
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\bin\Debug\GestorBD.pdb
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.csprojAssemblyReference.cache
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.Página1.resources
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.Properties.Resources.resources
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.csproj.GenerateResource.cache
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.csproj.CopyComplete
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.exe
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.pdb
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.Página2.resources
+C:\Users\RPLAUCHUR\Documents\Visual\Gastos\obj\Debug\Gastos.Página3.resources
