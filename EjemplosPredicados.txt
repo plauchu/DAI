@@ -1,0 +1,28 @@
+-- Ejemplos de predicados
+
+-- Comparación
+select *
+from prof
+where idprof>=5
+
+-- between
+select *
+from alum
+where prom between 8 and 9
+
+-- in
+select *
+from mater
+where creds in (7,9)
+
+-- like
+select *
+from alum
+where nomal like '%a%'
+
+select *
+from alum
+where nomal like '_a%'
+
+
+

@@ -1,0 +1,15 @@
+C:\DAIPLAU\Final-182671\Eventos\bin\Debug\Eventos.exe.config
+C:\DAIPLAU\Final-182671\Eventos\bin\Debug\Eventos.exe
+C:\DAIPLAU\Final-182671\Eventos\bin\Debug\Eventos.pdb
+C:\DAIPLAU\Final-182671\Eventos\bin\Debug\GestorBD.dll
+C:\DAIPLAU\Final-182671\Eventos\bin\Debug\GestorBD.pdb
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.csprojAssemblyReference.cache
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.pantalla1.resources
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.Properties.Resources.resources
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.csproj.GenerateResource.cache
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.csproj.CoreCompileInputs.cache
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.csproj.CopyComplete
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.exe
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.pdb
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.pantalla2.resources
+C:\DAIPLAU\Final-182671\Eventos\obj\Debug\Eventos.pantalla3.resources

@@ -1,0 +1,178 @@
+-- Solución del TP2, ej. 1.
+
+-- a)
+select idprof, nomprof
+from prof
+
+-- b)
+select *
+from prof
+
+--c
+select nomal, prom
+from alum
+where carr='neg' and prom>=9
+
+-- d
+select carr
+from alum
+
+-- e)
+select distinct carr
+from alum
+order by carr desc 
+
+--f)
+select nomal, carr, prom
+from alum
+order by carr, prom desc
+
+-- g)
+select nomprof, nommat, claveg
+from prof p, grupo g, mater m
+where p.idprof=g.idprof and g.clavem=m.clavem
+order by nomprof
+
+-- h) Versión 1.
+select nomal, nommat, calif, fecha
+from alum a, historial h, mater m
+where fecha between '01-01-2018' and '31-12-2018'
+  and a.cu=h.cu and h.clavem=m.clavem
+
+-- Versión 2
+select nomal, nommat, calif, fecha
+from alum a, historial h, mater m
+where year(fecha)=year(getdate())-1
+  and a.cu=h.cu and h.clavem=m.clavem
+
+-- i)
+select nommat, g.claveg, nomal
+from mater m, grupo g, inscrito i, alum a
+where m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+order by nommat, nomal desc
+
+-- j)
+select nomal, carr
+from alum
+where cu in
+	(select cu
+	from inscrito)
+
+-- k)
+select nomal, prom
+from alum
+where cu not in
+	(select cu
+	from inscrito)
+
+
+-- m)
+select avg(prom) "Prom. general", count(nomal) "Cant. de alumnos de Negocios"
+from alum
+where carr='neg'
+
+-- n)
+select count(*) "Cant. de materias"
+from mater
+
+-- o)
+select count(distinct carr) "Cant. de carreras"
+from alum
+
+-- p)
+select nomal, count(*) "Cant. de cursos"
+from alum a, inscrito i
+where a.cu=i.cu
+group by nomal
+
+-- q)
+select nomal, count(*) "Cant. de cursos"
+from alum a, inscrito i
+where a.cu=i.cu
+group by nomal
+having count(*) >= 2
+
+-- r)
+select nommat, avg(convert(real,calif)) "Promedio"
+from mater m, historial h
+where calif>=6 and year(fecha)=year(getdate())-1
+  and m.clavem=h.clavem
+group by nommat
+
+-- s)
+select nomal, sum(creds) "Total de créditos"
+from mater m, grupo g, inscrito i, alum a
+where m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+group by nomal
+
+-- t)
+select nomal, sum(creds) "Total de créditos"
+from mater m, grupo g, inscrito i, alum a
+where m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+group by nomal
+having sum(creds)>=15
+
+-- u) Versión incorrecta.
+select nommat
+from mater m, grupo g, inscrito i, alum a
+where carr='neg' or carr='mec' and
+  m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+group by nommat
+having count(*)>1
+
+-- u) Versión correcta.
+select nommat
+from mater m, grupo g, inscrito i, alum a
+where (carr='neg' or carr='mec') and
+  m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+group by nommat
+having count(*)>1
+
+-- w)
+select carr, avg(prom) "Prom. de carrera"
+from alum
+group by carr
+having avg(prom)<8.5
+
+
+
+-- x) Versión 1: incorrecta
+select nomal
+from mater m, grupo g, inscrito i, alum a
+where m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+  and nommat='Economía I' and nommat='Matemáticas I'
+
+-- x) Versión 2: incorrecta
+select nomal, nommat
+from mater m, grupo g, inscrito i, alum a
+where m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+  and (nommat='Economía I' or nommat='Matemáticas I')
+
+-- x) Versión 3: Correcta. Consulta de intersección.
+select nomal
+from mater m, grupo g, inscrito i, alum a
+where nommat='Economía I' and
+  m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+  and nomal in
+	(select nomal
+	from mater m, grupo g, inscrito i, alum a
+	where nommat='Matemáticas I' and
+	  m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu)
+
+-- y)
+select nomal
+from alum
+where carr='com'
+  union
+select nomal
+from mater m, grupo g, inscrito i, alum a
+where nommat='Matemáticas I' and
+  m.clavem=g.clavem and g.claveg=i.claveg and i.cu=a.cu
+
+
+
+
+
+
+
+

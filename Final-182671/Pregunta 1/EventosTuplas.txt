@@ -1,0 +1,27 @@
+
+-- Tuplas de la tabla lugar
+
+INSERT INTO lugar VALUES(1,'La casa','morelos 52');     
+INSERT INTO lugar VALUES(2,'El salón de fiestas','morelos 23'); 
+INSERT INTO lugar VALUES(3,'El lugar','morelos 24'); 
+INSERT INTO lugar VALUES(4,'Los eventos','morelos 25'); 
+INSERT INTO lugar VALUES(5,'El salón grande','morelos 32'); 
+
+
+-- Tuplas de la tabla evento
+
+INSERT INTO evento VALUES('Fiesta DAI','19-12-2019','formal',1);     
+INSERT INTO evento VALUES('Fiesta de fin de año','20-12-2019','con intercambio',2);
+INSERT INTO evento VALUES('Tardeada','21-12-2019','informal',1);
+
+-- Tuplas de la tabla alumno
+
+INSERT INTO alumno VALUES(10203,'ana@itam.mx');     
+INSERT INTO alumno VALUES(10204,'juan@itam.mx');
+INSERT INTO alumno VALUES(10205,'bety@itam.mx');
+
+-- Tuplas de la tabla alumnoEvento
+
+INSERT INTO alumnoEvento VALUES(10203,1);     
+INSERT INTO alumnoEvento VALUES(10203,2);
+INSERT INTO alumnoEvento VALUES(10205,3);      

@@ -1,0 +1,22 @@
+
+create table lugar 
+(idLugar int primary key,
+ nombre nvarchar(50) not null,
+ direccion nvarchar(50) not null)
+
+create table evento 
+(idEvento int identity(1,1) primary key,   --Para generar automáticamente la clave.
+ nombre nvarchar(50) not null,
+ fecha  datetime	check (Fecha > '2019-12-01'),
+ comentarios nvarchar(50),
+ idLugar int references lugar)
+
+create table alumno 
+(ClaveUnica int primary key,
+ correo nvarchar(50) not null)
+
+create table alumnoEvento 
+(idAlumnoEvento int identity(1,1)  primary key, --Para generar automáticamente la clave.
+ claveUnica int references alumno,
+ idEvento int references evento)
+

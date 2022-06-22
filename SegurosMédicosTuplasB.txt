@@ -1,0 +1,79 @@
+-- Tuplas de la tabla Canal.
+
+insert into Canal values (1,'Banco','Institución Financiera', 'Financiera');
+insert into Canal values (2,'Margarita','Agente', 'Agente');
+insert into Canal values (3,'Luis','Agente', 'Agente');
+
+-- Tuplas de la tabla Servicio.
+
+insert into Servicio values (50,'Premier 100',5000,100000,10000);
+insert into Servicio values (52,'Premier 200',7000,200000,20000);
+insert into Servicio values (54,'Premier 300',10000,400000,40000);
+insert into Servicio values (56,'Acceso clínicas',1000,20000,3000);
+insert into Servicio values (58,'Médica móvil',2000,30000,1000);
+insert into Servicio values (60,'Emergencia extranjero',5000,300000,20000);
+insert into Servicio values (62,'Deportes peligrosos',5000,200000,30000);
+
+-- Tuplas de la tabla Cliente.
+
+insert into Cliente values (100,'Jorge González','Ambos');
+insert into Cliente values (105,'Alejandro Lara','Ambos');
+insert into Cliente values (106,'Jessica Lara','Aseg');
+insert into Cliente values (107,'Ricardo Lara','Aseg');
+insert into Cliente values (110,'Francisco Hernández','Cont');
+insert into Cliente values (111,'Mariana Solís','Aseg');
+insert into Cliente values (115,'Marcela Ocampo','Ambos');
+insert into Cliente values (116,'Liliana Ocampo','Aseg');
+
+-- Tuplas de la tabla Contratante.
+
+insert into Contratante values (100,'Av. Chapultepec 12',null);
+insert into Contratante values (105,'Guerrero 64',null);
+insert into Contratante values (110,'Av. Revolución 180',null);
+insert into Contratante values (115,'Colima 167',null);
+
+-- Tuplas de la tabla Póliza.
+
+insert into Póliza values (300,'2018-12-20','2019-01-01',17000,0,100,2);
+insert into Póliza values (310,'2018-12-30','2019-01-01',8000,0,105,3);
+insert into Póliza values (320,'2019-03-31','2019-04-01',8000,3000,110,1);
+insert into Póliza values (330,'2019-06-30','2019-07-01',12000,7000,115,2);
+
+-- Tuplas de la tabla Pago.
+
+insert into Pago values (300,1,'2018-12-20',10000);
+insert into Pago values (300,2,'2019-06-30',7000);
+insert into Pago values (310,1,'2018-12-30',8000);
+insert into Pago values (320,1,'2019-03-31',5000);
+insert into Pago values (330,1,'2019-06-30',5000);
+
+
+-- Tuplas de la tabla Asegurado.
+
+insert into Asegurado values (100,'1981-02-10',300);
+insert into Asegurado values (105,'1968-03-24',310);
+insert into Asegurado values (106,'1995-05-23',310);
+insert into Asegurado values (107,'1997-08-05',310);
+insert into Asegurado values (111,'1987-01-08',320);
+insert into Asegurado values (115,'1963-12-25',330);
+insert into Asegurado values (116,'1988-10-15',330);
+
+-- Tuplas de la tabla Evento.
+
+insert into Evento values (500,'Traslado en ambulancia','2019-03-16','2019-03-16',2000,106);
+insert into Evento values (501,'Fractura de tibia','2019-03-16','2019-03-18',15000,106);
+insert into Evento values (505,'Tomografía','2019-07-01','2019-07-02',6000,111);
+
+-- Tuplas de la tabla Tiene.
+
+insert into Tiene values (300,54);
+insert into Tiene values (300,58);
+insert into Tiene values (300,60);
+insert into Tiene values (310,50);
+insert into Tiene values (310,56);
+insert into Tiene values (310,58);
+insert into Tiene values (320,50);
+insert into Tiene values (320,56);
+insert into Tiene values (320,58);
+insert into Tiene values (330,52);
+insert into Tiene values (330,62);

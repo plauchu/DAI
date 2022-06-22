@@ -1,0 +1,64 @@
+--   Definición de la base de datos de los seguros de gastos médicos.
+
+--   Definición de tablas.
+
+create table Canal
+	(IdC	   int		primary key,
+	Nombre	   varchar(30),
+	Descrip	   varchar(30),
+	Tipo	   char(10)	check (Tipo in ('Agente',
+					'Financiera','Otro')));
+
+create table Servicio
+	(IdS	   int		primary key,
+	Nombre	   varchar(30),
+	Costo	   money,
+	SumaAseg   money,
+	Deducible  real);
+
+create table Cliente
+	(IdCli	   int		primary key,
+	Nombre	   varchar(30),
+	Tipo	   char(5)	check (Tipo in ('Cont',
+					'Aseg','Ambos')));
+
+create table Contratante
+	(IdCli	   int		references Cliente primary key,
+	Dom	   varchar(40),
+	Tel	   char(13));
+
+create table Póliza
+	(Folio	   int		primary key,
+	FechaExp   datetime	check (FechaExp > '2000-01-01'),
+	FechaIniVig datetime,
+	Prima	   money	check (Prima > 1000),
+	Saldo	   money	check (Saldo >= 0),
+	IdCli	   int		references Contratante not null,
+	IdC	   int		references Canal not null);
+
+create table Pago
+	(Folio	   int		references Póliza,
+	IdP	   int,
+	Fecha	   datetime,
+	Monto	   money	check (Monto >= 500),
+				primary key (Folio, IdP));
+
+
+create table Asegurado
+	(IdCli	   int		references Cliente primary key,
+	FechaNacim datetime	check (FechaNacim >= '1950-01-01'),
+	Folio	   int		references Póliza not null);
+
+create table Evento
+	(IdE	   int		primary key,	
+	Descrip	   varchar(40),
+	FechaIni   datetime,
+	FechaFin   datetime,
+	Costo	   money	check (Costo between 1000 and 100000),
+	IdCli	   int		references Asegurado not null);
+
+create table Tiene
+	(Folio	   int		references Póliza,
+	IdS	   int		references Servicio,
+				primary key (Folio, IdS));
+

@@ -1,0 +1,40 @@
+-- 1)
+select p.sabor, p.costo, p.tamaño
+from pastel p
+where p.costo > 400
+
+-- 2)
+select c.nombre
+from cliente c, regCompra r, pastel p
+where c.idcliente = r.idcliente and r.idpastel = p.idpastel and sabor = 'Chocolate'
+and r.fecha between '01-01-2019' and '30-06-2019'
+
+-- 3)
+select c.nombre
+from cliente c, regCompra r, pastel p
+where c.idcliente = r.idcliente and r.idpastel = p.idpastel and sabor = 'Chocolate'
+and c.nombre not in
+	(select c.nombre
+	from cliente c, regCompra r, pastel p
+	where c.idcliente = r.idcliente and r.idpastel = p.idpastel and sabor = 'Queso con fresa')
+
+-- 4)
+select c.colonia
+from cliente c , regCompra r, pastel p
+where c.idcliente = r.idcliente and r.idpastel = p.idpastel and (sabor = 'Durazno' or sabor = 'Mango')
+
+-- 5)
+select avg(c.edad) "Promedio edad clientes col. progreso"
+from cliente c
+where colonia = 'Progreso'
+
+-- 6)
+select c.nombre, t.tel
+from cliente c, regCompra r, pastel p, teléfono t
+where c.idcliente = t.idcliente and c.idcliente = r.idcliente and r.idpastel = p.idpastel and r.fecha between '01-12-2018' and '31-12-2018'
+and c.idcliente in
+	(select r.idcliente
+	from cliente c, regCompra r, pastel p
+	where c.idcliente = r.idcliente and r.idpastel = p.idpastel and r.fecha between '01-12-2018' and '31-12-2018'
+	group by r.idcliente
+	having count (*) > 2)
